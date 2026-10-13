@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Fragrances | Home</title>
+    <link rel="stylesheet" href="indexstyle.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+       <div class="logo">
+    <a href="index.html" style="text-decoration: none; color: inherit;">AURA FRAGRANCES</a>
+</div>
+       <nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop Collection</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="#footer">Contact</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Signature Scent</h1>
+            <p>Elegance in every drop. Premium & long-lasting luxury fragrances crafted for you.</p>
+            <!-- Yeh button click karne par shop.html par le jayega -->
+            <a href="shop.html" class="hero-btn">Explore Collection &rarr;</a>
+        </div>
+    </section>
+    <!-- ABOUT US / WHY CHOOSE US SECTION -->
+<section id="about" style="padding: 60px 20px; background: #fff; text-align: center;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="font-size: 32px; color: #111; margin-bottom: 20px;">About Aura Fragrances</h2>
+        <p style="color: #666; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
+            Welcome to Aura Fragrances, where luxury meets pure emotion. We craft exquisite, long-lasting perfumes using the finest ingredients from around the world. Every bottle tells a unique story, designed to elevate your presence and leave a lasting impression.
+        </p>
+       </div>
+    
+</section>
+    <!-- FEATURES SECTION -->
+    <section class="features">
+        <h2>Why choose from Aura Fragrances?</h2>
+        <div class="feature-box">
+            <h3>Long Lasting</h3>
+            <p>Our fragrances last up to 18 hours with rich notes.</p>
+        </div>
+        <div class="feature-box">
+            <h3>100% Pure Organic</h3>
+            <p>Made with natural ingredients and pure essential oils.</p>
+        </div>
+        <div class="feature-box">
+            <h3>Luxury Packaging</h3>
+            <p>Beautifully designed bottles perfect for gifting.</p>
+        </div>
+    
+    </section>
+
+   <!-- FOOTER WITH CONTACT DETAILS -->
+<footer id="footer" style="background: #111; color: #fff; padding: 40px 20px; text-align: center; margin-top: 40px;">
+    <div style="max-width: 800px; margin: 0 auto; margin-bottom: 20px;">
+        <h3 style="color: #b89728; margin-bottom: 10px; font-size: 20px;">Aura Fragrances</h3>
+        <p style="font-size: 14px; color: #ccc; margin-bottom: 5px;">Email: support@aurafragrances.com | Phone: +92 300 1234567</p>
+        <p style="font-size: 14px; color: #ccc;">Address: Luxury Perfume Avenue, Karachi, Pakistan</p>
+    </div>
+    <p style="font-size: 13px; color: #777;">&copy; 2026 Aura Fragrances. All Rights Reserved.</p>
+</footer>
+<!-- CART OVERLAY & DRAWER -->
+<div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+<div id="cart-drawer" class="cart-drawer">
+    <!-- Header -->
+    <div class="cart-header">
+        <h3>Your Shopping Bag</h3>
+        <button class="close-btn" onclick="toggleCart()">&times;</button>
+    </div>
+
+    <!-- VIEW 1: CART ITEMS LIST -->
+    <div id="cart-view" class="cart-view">
+        <div id="cart-items" class="cart-items-container">
+            <!-- Items JS se dhyan se render honge -->
+        </div>
+
+        <div class="cart-footer">
+            <div class="subtotal-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">Rs. 0</span>
+            </div>
+            <button class="checkout-btn" onclick="showCustomerForm()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- VIEW 2: CUSTOMER INFORMATION FORM -->
+    <div id="checkout-view" class="checkout-view" style="display: none;">
+        <button class="back-to-cart-btn" onclick="showCartView()">&larr; Back to Cart</button>
+        <h4>Shipping Details</h4>
+        
+        <form id="checkout-form" onsubmit="placeOrder(event)">
+            <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" id="cust-name" required placeholder="e.g. Ali Khan">
+            </div>
+            <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" id="cust-phone" required placeholder="0300-1234567">
+            </div>
+            <div class="form-group">
+                <label>City *</label>
+                <input type="text" id="cust-city" required placeholder="e.g. Lahore / Karachi">
+            </div>
+            <div class="form-group">
+                <label>Complete Shipping Address *</label>
+                <textarea id="cust-address" required rows="3" placeholder="House #, Street, Area..."></textarea>
+            </div>
+            
+            <div class="payment-method-box">
+                <p><strong>Payment Method:</strong> Cash on Delivery (COD)</p>
+            </div>
+
+            <button type="submit" class="place-order-btn">Confirm & Place Order</button>
+        </form>
+    </div>
+</div>
+<div id="custom-toast">Your cart is empty. Please add items to checkout.</div>
+<script src="indexscript.js"></script>
+</body>
+</html>
